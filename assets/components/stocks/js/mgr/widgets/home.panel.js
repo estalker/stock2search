@@ -16,10 +16,6 @@ Stocks.panel.Home = function(config) {
                 title: _('stocks')
                 ,defaults: { autoHeight: true }
                 ,items: [{
-                    html: '<p>'+_('stocks.management_desc')+'</p>'
-                    ,border: false
-                    ,bodyCssClass: 'panel-desc'
-                },{
                     xtype: 'stocks-grid-stocks'
                     ,cls: 'main-wrapper'
                     ,preventRender: true
