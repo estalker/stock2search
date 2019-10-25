@@ -1,13 +1,20 @@
 <?php
 $xpdo_meta_map['Stock']= array (
   'package' => 'stocks',
+  'version' => NULL,
   'table' => 'stocks',
+  'extends' => 'xPDOSimpleObject',
+  'tableMeta' => 
+  array (
+    'engine' => 'MyISAM',
+  ),
   'fields' => 
   array (
+    'vendor' => '',
+    'number' => '',
+    'price' => 0.0,
+    'count' => '',
     'name' => '',
-    'description' => '',
-    'location' => '',
-    'downloads' => 0,
     'createdon' => NULL,
     'createdby' => 0,
     'editedon' => NULL,
@@ -15,36 +22,41 @@ $xpdo_meta_map['Stock']= array (
   ),
   'fieldMeta' => 
   array (
+    'vendor' => 
+    array (
+      'dbtype' => 'text',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'number' => 
+    array (
+      'dbtype' => 'text',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'price' => 
+    array (
+      'dbtype' => 'decimal',
+      'precision' => '4,2',
+      'phptype' => 'float',
+      'null' => false,
+      'default' => 0.0,
+    ),
+    'count' => 
+    array (
+      'dbtype' => 'text',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
     'name' => 
     array (
-      'dbtype' => 'varchar',
-      'precision' => '255',
-      'phptype' => 'string',
-      'null' => false,
-      'default' => '',
-    ),
-    'description' => 
-    array (
       'dbtype' => 'text',
       'phptype' => 'string',
       'null' => false,
       'default' => '',
-    ),
-    'location' => 
-    array (
-      'dbtype' => 'text',
-      'phptype' => 'string',
-      'null' => false,
-      'default' => '',
-    ),
-    'downloads' => 
-    array (
-      'dbtype' => 'int',
-      'precision' => '10',
-      'attributes' => 'unsigned',
-      'phptype' => 'integer',
-      'null' => false,
-      'default' => 0,
     ),
     'createdon' => 
     array (
