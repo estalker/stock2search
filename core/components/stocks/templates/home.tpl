@@ -1,0 +1,1 @@
+<div id="stocks-panel-home-div"></div>

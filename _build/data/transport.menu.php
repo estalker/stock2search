@@ -2,17 +2,17 @@
 /**
  * Adds modActions and modMenus into package
  *
- * @package doodles
+ * @package stocks
  * @subpackage build
  */
 
 $menu= $modx->newObject('modMenu');
 $menu->fromArray(array(
-    'text' => 'doodles',
-    'namespace' => 'doodles',
+    'text' => 'stocks',
+    'namespace' => 'stocks',
     'action' => 'home',
     'parent' => 'components',
-    'description' => 'doodles.desc',
+    'description' => 'stocks.desc',
     'icon' => 'images/icons/plugin.gif',
     'menuindex' => 0,
     'params' => '',

@@ -1,0 +1,13 @@
+Changelog file for Stocks component.
+
+Stocks 1.1
+====================================
+- Updates for Revo 2.2
+
+Stocks 1.0
+====================================
+- Updating text, ready to build
+- Added default properties to Stocks snippet in build
+- Fixes to stocks class
+- Fixed bugs with build, updated readme
+- Initial commit
