@@ -1,0 +1,13 @@
+Changelog file for Doodles component.
+
+Doodles 1.1
+====================================
+- Updates for Revo 2.2
+
+Doodles 1.0
+====================================
+- Updating text, ready to build
+- Added default properties to Doodles snippet in build
+- Fixes to doodles class
+- Fixed bugs with build, updated readme
+- Initial commit
