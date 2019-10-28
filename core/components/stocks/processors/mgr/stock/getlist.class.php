@@ -17,7 +17,8 @@ class StockGetListProcessor extends modObjectGetListProcessor {
         if (!empty($query)) {
             $c->where(array(
                 'name:LIKE' => '%'.$query.'%',
-                'OR:description:LIKE' => '%'.$query.'%',
+                'OR:vendor:LIKE' => '%'.$query.'%',
+                'OR:number:LIKE' => '%'.$query.'%',
             ));
         }
         return $c;

@@ -4,8 +4,7 @@ Stocks.grid.Stocks = function(config) {
         id: 'stocks-grid-stocks'
         ,url: Stocks.config.connectorUrl
         ,baseParams: { action: 'mgr/stock/getList' }
-        ,save_action: 'mgr/stock/updateFromGrid'
-        ,fields: ['id','name','description']
+        ,fields: ['id','vendor', 'number', 'price','count','name','filedate']
         ,paging: true
         ,autosave: true
         ,remoteSort: true
@@ -21,38 +20,31 @@ Stocks.grid.Stocks = function(config) {
             ,dataIndex: 'vendor'
             ,sortable: true
             ,width: 100
-            ,editor: { xtype: 'textfield' }
         },{
             header: _('stocks.number')
             ,dataIndex: 'number'
             ,sortable: true
             ,width: 150
-            ,editor: { xtype: 'textfield' }
         },{
             header: _('stocks.price')
             ,dataIndex: 'price'
             ,sortable: true
             ,width: 80
-            ,editor: { xtype: 'textfield' }
         },{
             header: _('stocks.count')
-            ,dataIndex: 'price'
+            ,dataIndex: 'count'
             ,sortable: true
             ,width: 80
-            ,editor: { xtype: 'textfield' }
         },{
             header: _('stocks.name')
             ,dataIndex: 'name'
             ,sortable: true
             ,width: 200
-            ,editor: { xtype: 'textfield' }
         },{
             header: _('stocks.filedate')
             ,dataIndex: 'filedate'
             ,sortable: true
             ,width: 80
-            ,editor: { xtype: 'textfield' }
-
         }]
         ,tbar: ['->',{
             xtype: 'textfield'

@@ -3,10 +3,10 @@
     <object class="Stock" table="stocks" extends="xPDOSimpleObject">
         <field key="vendor" dbtype="text" phptype="string" null="false" default=""/>
         <field key="number" dbtype="text" phptype="string" null="false" default=""/>
-	<field key="price" dbtype="decimal" precision="4,2" phptype="float" null="false" default="" />
+	<field key="price" dbtype="decimal" precision="19,2" phptype="float" null="false" default="" />
 	<field key="count" dbtype="text" phptype="string" null="false" default=""/>
         <field key="name" dbtype="text" phptype="string" null="false" default=""/>
-        <field key="filedate" dbtype="datetime" phptype="datetime" null="false" default=""/>
+        <field key="filedate" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP"/>
 
         <field key="createdon" dbtype="datetime" phptype="datetime" null="true"/>
         <field key="createdby" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
