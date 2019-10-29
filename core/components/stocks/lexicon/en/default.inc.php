@@ -23,6 +23,7 @@ $_lang['stocks.number'] = 'Number';
 $_lang['stocks.price'] = 'Price';
 $_lang['stocks.count'] = 'Count';
 $_lang['stocks.name'] = 'Name';
+$_lang['stocks.stock_import'] = 'Import';
 $_lang['stocks.filedate'] = 'File Date';
 $_lang['stocks.search...'] = 'Search...';
 $_lang['stocks.top_downloaded'] = 'Top Downloaded Stocks';

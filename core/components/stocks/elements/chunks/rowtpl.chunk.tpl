@@ -1,1 +1,1 @@
-<li><strong>[[+name]]</strong> - [[+description]]</li>
+<tr><td>[[+vendor]]</td><td>[[+number]]</td><td>[[+price]]</td><td>[[+count]]</td><td>[[+name]]</td></tr>

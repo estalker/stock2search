@@ -46,7 +46,10 @@ Stocks.grid.Stocks = function(config) {
             ,sortable: true
             ,width: 80
         }]
-        ,tbar: ['->',{
+        ,tbar: [{
+ 	    text: _('stocks.stock_import')
+	   ,handler: function(){ Ext.getCmp('stock-panel-cmp').importLastFile(); }
+		},'->',{
             xtype: 'textfield'
             ,id: 'stocks-search-filter'
             ,emptyText: _('stocks.search...')
