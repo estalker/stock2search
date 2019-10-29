@@ -20,11 +20,15 @@ $c->sortby($sort,$dir);
 $c->where(array('number' => $searchString));
 $stocks = $modx->getCollection('Stock',$c);
 /* iterate */
-$output = '<table class="table table-bordered table-fixed table-striped">';
-foreach ($stocks as $stock) {
-    $stockArray = $stock->toArray();
-    $output .= $dood->getChunk($tpl,$stockArray);
+$output = '';
+if(!empty($stocks))
+{
+	$output = '<table class="table table-bordered table-fixed table-striped">'.
+	'<tr><th>Марка</th><th>Номер</th><th>Цена</th><th>Кол-во</th><th>Наименование</th></tr>';
+	foreach ($stocks as $stock) {
+	    $stockArray = $stock->toArray();
+	    $output .= $dood->getChunk($tpl,$stockArray);
+	}
+	$output .= '</table>';
 }
-$output .= '</table>';
-
 return $output;

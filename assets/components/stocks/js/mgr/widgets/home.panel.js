@@ -88,12 +88,11 @@ Ext.extend(Stocks.panel.Home,MODx.Panel,{
                         imp_form.getForm().reset();
                         Ext.getCmp('modx-resource-tree').refresh();
                         MODx.clearCache();
-                        
+			Ext.getCmp('stocks-grid-stocks').refresh();
                     }
                     
                 }
                 
-                Ext.getCmp('stock-panel-cmp').loadStat();
                             	
             }
             ,failure: function(response, options){

@@ -37,6 +37,7 @@ class StocksImporter {
             "connectorUrl" => $this->modx->getOption('assets_url') . 'components/stocks/connector.php',
             "templatesPath" => $this->modx->getOption('core_path') . 'components/stocks/templates/',
             "impFilesPath" => 'assets/components/stocks/files/',
+            "impFilesEncoding" => 'cp1251', /* 'cp866', 'cp1251' */
             "table_name" => $this->modx->config['table_prefix']."stocks",
             "table_prefix" => $this->modx->config['table_prefix'],
 	    "table_columns" => array('vendor','number','price','count','name','filedate'),
@@ -47,27 +48,6 @@ class StocksImporter {
 
         
         $this->modx->addPackage('stocks', $this->config['corePath'] . 'model/');
-
-        $modelpath = $this->modx->getOption('core_path') . 'components/' . $this->config['packageName'] . '/model/';
-        $loaded = $this->modx->loadClass($this->config['className'], $modelpath.$this->config['packageName'].'/');
-        $added = $this->modx->addPackage($this->config['packageName'], $modelpath);
-        if($added){
-        	$mapFile = $modelpath . $this->config['packageName'] .'/'. $this->modx->config['dbtype'] . '/' .strtolower($this->config['className']). '.map.inc.php';
-                if(file_exists($mapFile)){
-                    include $mapFile;
-                    $metaMap = $xpdo_meta_map[ucfirst($this->config['className'])];
-                    $this->config['table_name'] = $this->modx->config['table_prefix'].$metaMap['table'];
-                    $this->table_fields = array_merge($this->table_fields,array_keys($metaMap['fields']));
-
-                    if(!isset($this->modx->map[$this->config['className']])){
-                        $this->modx->map[$this->config['className']] = array();
-                        $this->modx->map[$this->config['className']]['table'] = $metaMap['table'];
-                    }
-
-                }
-	}
-
-
   
     }
 
@@ -87,7 +67,7 @@ class StocksImporter {
         else
           return false;
     }
-
+    
     /**
      * Сбрасываем auto_increment ID
      * 
@@ -171,7 +151,7 @@ public function deleteAll()
 
 		foreach($line as $cls => $vls)
 		{
-		  $line[$cls] = $this->isUTF8($vls) ? trim($vls) : trim(iconv('cp1251','UTF-8',$vls));
+		  $line[$cls] = $this->isUTF8($vls) ? trim($vls) : trim(iconv($this->config['impFilesEncoding'],'UTF-8',$vls));
 		}                
 		                
 		$insertArr = array_combine($this->config['table_columns'],$line);

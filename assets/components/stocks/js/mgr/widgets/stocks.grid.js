@@ -48,8 +48,8 @@ Stocks.grid.Stocks = function(config) {
         }]
         ,tbar: [{
  	    text: _('stocks.stock_import')
-	   ,handler: function(){ Ext.getCmp('stock-panel-cmp').importLastFile(); }
-		},'->',{
+	   ,handler: function(){Ext.getCmp('stock-panel-cmp').importLastFile();Ext.getCmp('stocks-grid-stocks').refresh();}}
+	   ,'->',{
             xtype: 'textfield'
             ,id: 'stocks-search-filter'
             ,emptyText: _('stocks.search...')
