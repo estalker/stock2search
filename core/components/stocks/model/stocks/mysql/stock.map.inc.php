@@ -12,7 +12,7 @@ $xpdo_meta_map['Stock']= array (
   array (
     'vendor' => '',
     'number' => '',
-    'price' => 0.0,
+    'price' => '',
     'count' => '',
     'name' => '',
     'filedate' => 'CURRENT_TIMESTAMP',
@@ -39,11 +39,10 @@ $xpdo_meta_map['Stock']= array (
     ),
     'price' => 
     array (
-      'dbtype' => 'decimal',
-      'precision' => '19,2',
-      'phptype' => 'float',
+      'dbtype' => 'text',
+      'phptype' => 'text',
       'null' => false,
-      'default' => 0.0,
+      'default' => '',
     ),
     'count' => 
     array (

@@ -97,4 +97,23 @@ class Stocks {
         }
         return $chunk;
     }
+
+    public function parseSearchString($str = '') {
+        $minChars = $this->modx->getOption('minChars',$this->config,4);
+
+        $this->searchArray = explode(' ',$str);
+        $this->searchArray = $this->modx->sanitize($this->searchArray, $this->modx->sanitizePatterns);
+        $reserved = array('AND','OR','IN','NOT');
+        foreach ($this->searchArray as $key => $term) {
+            $this->searchArray[$key] = strip_tags($term);
+            if (strlen($term) < $minChars && !in_array($term,$reserved)) {
+                unset($this->searchArray[$key]);
+            }
+        }
+        $this->searchString = implode(' ', $this->searchArray);
+        // one last pass to filter for modx tags
+        $this->searchString = str_replace(array('[[',']]'),array('&#91;&#91;','&#93;&#93;'),$this->searchString);
+        return $this->searchString;
+    }
+
 }
